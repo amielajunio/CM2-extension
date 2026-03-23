@@ -1,0 +1,152 @@
+{
+  "collections": {
+    "c_gamma_1": {
+      "Re": null
+    },
+    "c_gamma_2": {
+      "Us": null
+    },
+    "c_gamma_3": {
+      "Co": {
+        "C2": null
+      }
+    },
+    "c_gamma_4": {
+      "Bn": null
+    },
+    "c_gamma_5": {
+      "Bd": null
+    },
+    "c_gamma_6": {
+      "It": null
+    },
+    "c_gamma_7": {
+      "Ct": null
+    }
+  },
+  "indexes": {
+    "c_gamma_1": {
+      "IX": []
+    },
+    "c_gamma_2": {
+      "IX": [
+        [
+          [
+            "Us",
+            "idU"
+          ]
+        ]
+      ]
+    },
+    "c_gamma_3": {
+      "IX": []
+    },
+    "c_gamma_4": {
+      "IX": []
+    },
+    "c_gamma_5": {
+      "IX": [
+        [
+          [
+            "Bd",
+            "item"
+          ]
+        ]
+      ]
+    },
+    "c_gamma_6": {
+      "IX": [
+        [
+          [
+            "It",
+            "idI"
+          ]
+        ]
+      ]
+    },
+    "c_gamma_7": {
+      "IX": []
+    }
+  },
+  "query_plans": {
+    "q4": {
+      "freq": 1.54,
+      "type": "r",
+      "aps": [
+        {
+          "c": "c_gamma_6",
+          "r": null,
+          "sp": [
+            [
+              "It",
+              "idI",
+              1
+            ]
+          ]
+        },
+        {
+          "c": "c_gamma_5",
+          "r": "gets",
+          "sp": [],
+          "jp": [
+            [
+              "It",
+              "idI"
+            ],
+            [
+              "Bd",
+              "item"
+            ]
+          ]
+        },
+        {
+          "c": "c_gamma_2",
+          "r": "places",
+          "sp": [],
+          "jp": [
+            [
+              "Bd",
+              "user"
+            ],
+            [
+              "Us",
+              "idU"
+            ]
+          ]
+        }
+      ]
+    },
+    "q40": {
+      "freq": 1.54,
+      "type": "r",
+      "aps": [
+        {
+          "c": "c_gamma_6",
+          "r": null,
+          "sp": [
+            [
+              "It",
+              "idI",
+              1
+            ]
+          ]
+        },
+        {
+          "c": "c_gamma_2",
+          "r": "sells",
+          "sp": [],
+          "jp": [
+            [
+              "It",
+              "seller"
+            ],
+            [
+              "Us",
+              "idU"
+            ]
+          ]
+        }
+      ]
+    }
+  }
+}

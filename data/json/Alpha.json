@@ -1,0 +1,482 @@
+{
+  "collections": {
+    "c_alpha_1": {
+      "Cu": {
+        "Or": {
+          "Cr": null,
+          "Py": null
+        }
+      }
+    },
+    "c_alpha_2": {
+      "Pr": {
+        "It": null,
+        "Su": null
+      }
+    },
+    "c_alpha_3": {
+      "Ct": null
+    }
+  },
+  "indexes": {
+    "c_alpha_1": {
+      "IX": [
+        [["Or", "idO"]],
+        [["Cu", "idC"]],
+        [["Or", "date"]],
+        [["Cu", "country"], ["Or", "idO"]],
+        [["Cu", "country"]],
+        [["Cr", "name"]],
+        [["Cr", "idR"]],
+        [["Cr", "name"], ["Cu", "country"]]
+
+      ]
+      
+    },
+    "c_alpha_2": {
+      "IX": [
+        [["Pr", "price"], ["Su", "name"]],
+        [["It", "quantity"]],
+        [["Pr", "idP"]],
+        [["It", "idI"]],
+        [["Pr", "idT"]],
+        [["Pr", "price"]]
+      ]
+   
+    },
+    "c_alpha_3": {
+      "IX": [
+        [["Ct", "idT"]],
+        [["Ct", "description"]]
+      ]
+    }
+  },  "query_plans": {
+    "qp_e1_or_f1_a1": {
+      "freq": 1,
+      "type": "r",
+      "aps": [
+        {
+          "c": "c_alpha_1",
+          "r": null,
+          "sp": [["Or", "idO", 1]],
+          "jp": null
+        }
+      ]
+    },
+  "qp_e1_or_f2_a1": {
+  "freq": 1,
+  "type": "r",
+  "aps": [
+    {
+      "c": "c_alpha_1",
+      "r": null,
+      "sp": [["Or", "date", 3]],
+      "jp": null
+    }
+  ]
+},
+
+"qp_e3_cu_f1_a1": {
+  "freq": 1,
+  "type": "r",
+  "aps": [
+    {
+      "c": "c_alpha_1",
+      "r": null,
+      "sp": [["Cu", "idC", 1]],
+      "jp": null
+    }
+  ]
+},
+
+"qp_e3_cu_f2_a1": {
+  "freq": 1,
+  "type": "r",
+  "aps": [
+    {
+      "c": "c_alpha_1",
+      "r": null,
+      "sp": [["Cu", "country", 10]],
+      "jp": null
+    }
+  ]
+},
+
+"qp_e3_cu_f3_a1": {
+  "freq": 1,
+  "type": "r",
+  "aps": [
+    {
+      "c": "c_alpha_1",
+      "r": null,
+      "sp": [
+        ["Cu", "country", 10],
+        ["Cr", "name", 10]
+      ],
+      "jp": null
+    }
+  ]
+},
+
+"qp_e3_cr_f1_a1": {
+  "freq": 1,
+  "type": "r",
+  "aps": [
+    {
+      "c": "c_alpha_1",
+      "r": null,
+      "sp": [["Cr", "idR", 1]],
+      "jp": null
+    }
+  ]
+},
+
+"qp_e3_cr_f2_a1": {
+  "freq": 1,
+  "type": "r",
+  "aps": [
+    {
+      "c": "c_alpha_1",
+      "r": null,
+      "sp": [["Cr", "name", 2]],
+      "jp": null
+    }
+  ]
+},
+
+"qp_e3_cr_f3_a1": {
+  "freq": 1,
+  "type": "r",
+  "aps": [
+    {
+      "c": "c_alpha_1",
+      "r": null,
+      "sp": [
+        ["Cr", "name", 2],
+        ["Cu", "country", 30]
+      ],
+      "jp": null
+    }
+  ]
+},
+
+"qp_e7_it_f1_a1": {
+  "freq": 1,
+  "type": "r",
+  "aps": [
+    {
+      "c": "c_alpha_2",
+      "r": null,
+      "sp": [["It", "idI", 1]],
+      "jp": null
+    },
+    {
+      "c": "c_alpha_3",
+      "r": "catalogues",
+      "sp": [],
+      "jp": [
+        ["Pr", "idT"],
+        ["Ct", "idT"]
+      ]
+    },
+    {
+      "c": "c_alpha_1",
+      "r": "consists_of",
+      "sp": [],
+      "jp": [
+        ["It", "idO"],
+        ["Or", "idO"]
+      ]
+    }
+  ]
+},
+
+"qp_e7_it_f2_a1": {
+  "freq": 1,
+  "type": "r",
+  "aps": [
+    {
+      "c": "c_alpha_2",
+      "r": null,
+      "sp": [["It", "quantity", 10]],
+      "jp": null
+    },
+    {
+      "c": "c_alpha_3",
+      "r": "catalogues",
+      "sp": [],
+      "jp": [
+        ["Pr", "idT"],
+        ["Ct", "idT"]
+      ]
+    },
+    {
+      "c": "c_alpha_1",
+      "r": "consists_of",
+      "sp": [],
+      "jp": [
+        ["It", "idO"],
+        ["Or", "idO"]
+      ]
+    }
+  ]
+},
+
+"qp_e7_it_f3_a1": {
+  "freq": 1,
+  "type": "r",
+  "aps": [
+    {
+      "c": "c_alpha_2",
+      "r": null,
+      "sp": [["It", "quantity", 10]],
+      "jp": null
+    },
+    {
+      "c": "c_alpha_3",
+      "r": "catalogues",
+      "sp": [],
+      "jp": [
+        ["Pr", "idT"],
+        ["Ct", "idT"]
+      ]
+    },
+    {
+      "c": "c_alpha_1",
+      "r": "consists_of",
+      "sp": [["Cu", "country", 2]],
+      "jp": [
+        ["It", "idO"],
+        ["Or", "idO"]
+      ]
+    }
+  ]
+},
+
+"qp_e7_pr_f1_a1": {
+  "freq": 1,
+  "type": "r",
+  "aps": [
+    {
+      "c": "c_alpha_2",
+      "r": null,
+      "sp": [["Pr", "idP", 1]],
+      "jp": null
+    },
+    {
+      "c": "c_alpha_3",
+      "r": "catalogues",
+      "sp": [],
+      "jp": [
+        ["Pr", "idT"],
+        ["Ct", "idT"]
+      ]
+    },
+    {
+      "c": "c_alpha_1",
+      "r": "consists_of",
+      "sp": [],
+      "jp": [
+        ["It", "idO"],
+        ["Or", "idO"]
+      ]
+    }
+  ]
+},
+
+"qp_e7_pr_f2_a1": {
+  "freq": 1,
+  "type": "r",
+  "aps": [
+    {
+      "c": "c_alpha_2",
+      "r": null,
+      "sp": [["Pr", "price", 10]],
+      "jp": null
+    },
+    {
+      "c": "c_alpha_3",
+      "r": "catalogues",
+      "sp": [],
+      "jp": [
+        ["Pr", "idT"],
+        ["Ct", "idT"]
+      ]
+    },
+    {
+      "c": "c_alpha_1",
+      "r": "consists_of",
+      "sp": [],
+      "jp": [
+        ["It", "idO"],
+        ["Or", "idO"]
+      ]
+    }
+  ]
+},
+
+"qp_e7_pr_f3_a1": {
+  "freq": 1,
+  "type": "r",
+  "aps": [
+    {
+      "c": "c_alpha_2",
+      "r": null,
+      "sp": [
+        ["Pr", "price", 50],
+        ["Su", "name", 10]
+      ],
+      "jp": null
+    },
+    {
+      "c": "c_alpha_3",
+      "r": "catalogues",
+      "sp": [],
+      "jp": [
+        ["Pr", "idT"],
+        ["Ct", "idT"]
+      ]
+    },
+    {
+      "c": "c_alpha_1",
+      "r": "consists_of",
+      "sp": [],
+      "jp": [
+        ["It", "idO"],
+        ["Or", "idO"]
+      ]
+    }
+  ]
+},
+
+"qp_e7_ct_f1_a1": {
+  "freq": 1,
+  "type": "r",
+  "aps": [
+    {
+      "c": "c_alpha_3",
+      "r": null,
+      "sp": [["Ct", "idT", 1]],
+      "jp": null
+    },
+    {
+      "c": "c_alpha_2",
+      "r": "catalogues",
+      "sp": [],
+      "jp": [
+        ["Ct", "idT"],
+        ["Pr", "idT"]
+      ]
+    },
+    {
+      "c": "c_alpha_1",
+      "r": "consists_of",
+      "sp": [],
+      "jp": [
+        ["It", "idO"],
+        ["Or", "idO"]
+      ]
+    }
+  ]
+},
+
+"qp_e7_ct_f2_a1": {
+  "freq": 1,
+  "type": "r",
+  "aps": [
+    {
+      "c": "c_alpha_3",
+      "r": null,
+      "sp": [["Ct", "description", 2]],
+      "jp": null
+    },
+    {
+      "c": "c_alpha_2",
+      "r": "catalogues",
+      "sp": [],
+      "jp": [
+        ["Ct", "idT"],
+        ["Pr", "idT"]
+      ]
+    },
+    {
+      "c": "c_alpha_1",
+      "r": "consists_of",
+      "sp": [],
+      "jp": [
+        ["It", "idO"],
+        ["Or", "idO"]
+      ]
+    }
+  ]
+},
+
+"qp_e7_ct_f3_a1": {
+  "freq": 1,
+  "type": "r",
+  "aps": [
+    {
+      "c": "c_alpha_3",
+      "r": null,
+      "sp": [["Ct", "description", 2]],
+      "jp": null
+    },
+    {
+      "c": "c_alpha_2",
+      "r": "catalogues",
+      "sp": [],
+      "jp": [
+        ["Ct", "idT"],
+        ["Pr", "idT"]
+      ]
+    },
+    {
+      "c": "c_alpha_1",
+      "r": "consists_of",
+      "sp": [["Cu", "country", 2]],
+      "jp": [
+        ["It", "idO"],
+        ["Or", "idO"]
+      ]
+    }
+  ]
+},
+
+"qp_u1_or_a1": {
+  "freq": 1,
+  "type": "w",
+  "aps": [
+    {
+      "c": "c_alpha_1",
+      "r": null,
+      "sp": [["Or", "idO", 1]],
+      "jp": null
+    }
+  ]
+}
+
+
+
+  
+   
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  }
+}

@@ -1,0 +1,141 @@
+{"workload": {
+  "Q1": {
+    "f": 15,
+    "type": "r",
+    "entities": ["Or", "Cu", "It", "Pr"],
+    "rels": ["requests", "consists_of", "references"],
+    "pred": [
+      ["Or", "idO", 1]
+    ]
+  },
+
+  "Q2": {
+    "f": 9,
+    "type": "r",
+    "entities": ["Or", "Cu","Py"],
+    "rels": ["requests","commits"],
+    "pred": [
+      ["Or", "idO", 1]
+    ]
+  },
+
+  "Q3": {
+    "f": 4.5,
+    "type": "r",
+    "entities": ["Cu", "Or", "Cr"],
+    "rels": ["requests", "delivers"],
+    "pred": [
+      ["Cu", "idC", 1]
+    ]
+  },
+
+  "Q4": {
+    "f": 3,
+    "type": "r",
+    "entities": ["Cu","Or","Py"],
+    "rels": ["requests","commits"],
+    "pred": [
+      ["Cu", "idC", 1]
+    ]
+  },
+
+  "Q5": {
+    "f": 1,
+    "type": "r",
+    "entities": ["Pr", "It","Or"],
+    "rels": ["references","consists_of"],
+    "pred": [
+      ["Pr", "idP", 1]
+    ]
+  },
+
+  "Q6": {
+    "f": 1,
+    "type": "r",
+    "entities": ["Su", "Pr", "Ct"],
+    "rels": ["furnishes", "catalogues"],
+    "pred": [
+      ["Su", "idS", 1]
+    ]
+  },
+
+  "U1": {
+  "f": 1,
+  "type": "w",
+  "entities": ["Cu"],
+  "rels": [],
+  "pred": [
+    ["Cu", "idC", 1]
+  ]
+},
+
+"U2": {
+  "f": 1,
+  "type": "w",
+  "entities": ["Or"],
+  "rels": [],
+  "pred": [
+    ["Or", "idO", 1]
+  ]
+},
+
+"U3": {
+  "f": 1,
+  "type": "w",
+  "entities": ["It"],
+  "rels": [],
+  "pred": [
+    ["It", "idI", 1]
+  ]
+},
+
+"U4": {
+  "f": 1,
+  "type": "w",
+  "entities": ["Pr"],
+  "rels": [],
+  "pred": [
+    ["Pr", "idP", 1]
+  ]
+},
+
+"U5": {
+  "f": 1,
+  "type": "w",
+  "entities": ["Py"],
+  "rels": [],
+  "pred": [
+    ["Py", "idY", 1]
+  ]
+},
+
+"U6": {
+  "f": 1,
+  "type": "w",
+  "entities": ["Cr"],
+  "rels": [],
+  "pred": [
+    ["Cr", "idR", 1]
+  ]
+},
+
+"U7": {
+  "f": 1,
+  "type": "w",
+  "entities": ["Su"],
+  "rels": [],
+  "pred": [
+    ["Su", "idS", 1]
+  ]
+},
+
+"U8": {
+  "f": 1,
+  "type": "w",
+  "entities": ["Ct"],
+  "rels": [],
+  "pred": [
+    ["Ct", "idT", 1]
+  ]
+}
+}}

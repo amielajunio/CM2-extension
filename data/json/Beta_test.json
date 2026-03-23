@@ -1,0 +1,134 @@
+{
+    "collections": {
+       
+        "c_beta_1": {
+            "Or": {
+                "It": null,
+                "Py": null,
+                "Cu": null
+              }
+            
+        },
+        "c_beta_2": {
+            "It": {
+                "Or": {
+                    "Py": null,
+                    "Cu": null
+                  }
+            }
+        },
+        "c_beta_3": {
+            "Cr": null
+        },
+        "c_beta_4": {
+            "Pr": {
+                "Ct": null
+              }
+        },
+        "c_beta_5": {
+            "Su": null
+        }
+    
+
+    },
+    "indexes": {
+        "c_beta_1": {
+                    "IX": [
+                       
+                        [["It","quantity"]],
+                        [["It","quantity"],["Cu", "country"]],
+                        [["Or","idO"]],
+                        [["Cu","idC"]],
+                        [["Or", "date" ]],
+                        [["Cu", "country" ],["Or","idR" ]],
+                        [["Cu", "country"]],
+                        [["It","idP"]],
+                        [["Or","idR"]]
+                    ]
+                    
+                },
+                "c_beta_2": {
+                    "IX": [ [["Cu", "country"], ["It", "idP"]],
+                    [["It", "idI"]],
+                    [["It", "idP"]],
+                    [["Or", "idO"]]]
+                },
+                "c_beta_3": {
+                    "IX": [
+                        [["Cr","name"],["Cr","idR"]],
+                        [["Cr","name"]],
+                        [["Cr","idR"]]]
+                },
+                "c_beta_4": {
+                    "IX": [
+                        [
+                            [
+                                "Ct",
+                                "idT"
+                            ]
+                        ],
+                        [
+                            [
+                                "Pr",
+                                "price"
+                            ]
+                        ],
+                        [
+                            [
+                                "Ct",
+                                "description"
+                            ]
+                        ],
+                        [
+                            [
+                                "Pr",
+                                "idP"
+                            ]
+                        ]
+                    ]
+                },
+                "c_beta_5": {
+                    "IX": [
+                        [
+                            [
+                                "Su",
+                                "name"
+                            ],
+                            [
+                                "Su",
+                                "idS"
+                            ]
+                        ],
+                        [
+                            [
+                                "Su",
+                                "idS"
+                            ]
+                        ]
+                    ]
+                }
+            },
+        
+        
+            "query_plans": {
+                "qp_e1_cu_f1_b1": {
+                    "freq": 1,
+                    "type": "r",
+                    "aps": [
+                        {
+                            "c": "c_beta_1",
+                            "r": null,
+                            "sp": [
+                                [
+                                    "Cu",
+                                    "idC",
+                                    1
+                                ]
+                            ],
+                            "jp": null
+                        }
+                    ]
+                }            }
+}    
+    
+

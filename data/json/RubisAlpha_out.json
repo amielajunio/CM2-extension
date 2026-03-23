@@ -1,0 +1,106 @@
+{
+  "collections": {
+    "c_alpha_1": {
+      "Us": {
+        "Bd": {
+          "It": null
+        },
+        "It": null,
+        "Bn": null,
+        "Co": {
+          "C2": null
+        }
+      }
+    },
+    "c_alpha_2": {
+      "It": {
+        "Bd": null
+      }
+    },
+    "c_alpha_3": {
+      "Re": {
+        "Us": null
+      }
+    },
+    "c_alpha_4": {
+      "Co": null
+    },
+    "c_alpha_5": {
+      "Ct": {
+        "It": null
+      }
+    }
+  },
+  "indexes": {
+    "c_alpha_1": {
+      "IX": [
+        [
+          [
+            "It",
+            "idI",
+            1,
+            "gets"
+          ]
+        ],
+        [
+          [
+            "It",
+            "idI",
+            1,
+            "sells"
+          ]
+        ]
+      ]
+    },
+    "c_alpha_2": {
+      "IX": []
+    },
+    "c_alpha_3": {
+      "IX": []
+    },
+    "c_alpha_4": {
+      "IX": []
+    },
+    "c_alpha_5": {
+      "IX": []
+    }
+  },
+  "query_plans": {
+    "q4": {
+      "freq": 1.54,
+      "type": "r",
+      "aps": [
+        {
+          "c": "c_alpha_1",
+          "r": null,
+          "sp": [
+            [
+              "It",
+              "idI",
+              1,
+              "gets"
+            ]
+          ]
+        }
+      ]
+    },
+    "q40": {
+      "freq": 1.54,
+      "type": "r",
+      "aps": [
+        {
+          "c": "c_alpha_1",
+          "r": null,
+          "sp": [
+            [
+              "It",
+              "idI",
+              1,
+              "sells"
+            ]
+          ]
+        }
+      ]
+    }
+  }
+}

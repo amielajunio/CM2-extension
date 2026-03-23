@@ -1,0 +1,121 @@
+
+{ 
+    "collections" : {
+    "c_delta_1" : {"Cu":  {"Or": {"Py": null, "It": null}}},
+    "c_delta_2" : {"Pr": null},
+    "c_delta_3" : {"Ct": null},
+    "c_delta_4" : {"Su": null},
+    "c_delta_5" : {"Cr": null}
+},
+
+
+"indexes": {
+    "c_delta_1": {
+      "IX": [
+        [["Or", "idO"]],
+        [["Cu", "idC"]],
+        [["It","idP"]],
+        [["It","idI"],["Py","idY"]]
+    ]
+    },
+"c_delta_2": {
+      "IX": [
+        [["Pr", "idP"]],
+        [["Pr","idS"]]
+      ]
+    }, 
+"c_delta_3": {
+      "IX": [
+        [["Ct","idT"]]
+      ]
+    },
+"c_delta_4": {
+      "IX": [
+        [["Su","idS"]]
+      ]
+    },
+"c_delta_5": {
+      "IX": [
+       [["Cr","idR"]]
+      ]
+    }
+},
+
+"query_plans": {
+    "q1_d1": {
+        "freq": 15,
+        "type": "r",
+        "aps":  [
+        { "c": "c_delta_1", "r": null, "sp": [["Or","idO",1]], "jp": null },
+        { "c": "c_delta_2", "r": "references", "sp": [], "jp": [["It","idP"],["Pr","idP"]] }]
+    } ,    
+    "q2_d1": {
+        "freq": 9,
+        "type": "r",
+        "aps":  [
+            { "c": "c_delta_1", "r": null, "sp": [["Or","idO",1]], "jp": null }]},
+    "q3_d1": {        
+        "freq": 4.5,
+        "type": "r",
+        "aps": [
+        { "c": "c_delta_1", "r": null, "sp": [["Cu","idC",1]], "jp": null },
+        { "c": "c_delta_5", "r": "delivers", "sp": [], "jp": [["Or","idR"],["Cr","idR"]] }
+    ]},
+    "q4_d1": {        
+        "freq": 3,
+        "type": "r",
+        "aps": [
+        { "c": "c_delta_1", "r": null, "sp": [["Cu","idC",1]], "jp": null }
+    ]},
+    "q5_d1": {        
+        "freq": 1,
+        "type": "r",
+        "aps": [
+        { "c": "c_delta_2", "r": null, "sp": [["Pr","idP",1]], "jp": null },
+        { "c": "c_delta_1", "r": "references", "sp": [], "jp": [["Pr","idP"],["It","idP"]] }
+    ]},
+    "q6_d1": {        
+        "freq": 1,
+        "type": "r",
+        "aps": [
+        { "c": "c_delta_4", "r": null, "sp": [["Su","idS",1]], "jp": null }, 
+        { "c": "c_delta_2", "r": "furnishes", "sp": [], "jp": [["Su","idS"],["Pr","idS"]] },
+        { "c": "c_delta_3", "r": "catalogues", "sp": [], "jp": [["Pr","idT"],["Ct","idT"]] }
+    ]},
+   "u1_d1": {        
+        "freq": 1,
+        "type": "w",
+        "aps": [{ "c": "c_delta_1", "r": null, "sp": [["Cu","idC",1]], "jp": null }]},
+    "u2_d1": {
+        "freq": 1,
+        "type": "w",
+        "aps": [{ "c": "c_delta_1", "r": null, "sp": [["Or","idO",1]], "jp": null }]},
+    "u3_d1": {
+        "freq": 1,
+        "type": "w",
+        "aps": [ { "c": "c_delta_1", "r": null, "sp": [["It","idI",1]], "jp": null }]},
+    "u4_d1": {
+        "freq": 1,
+        "type": "w",
+        "aps": [{ "c": "c_delta_2", "r": null, "sp": [["Pr","idP",1]], "jp": null }]},
+    "u5_d1": {
+        "freq": 1,
+        "type": "w",
+        "aps": [{ "c": "c_delta_1", "r": null, "sp": [["Py","idY",1]], "jp": null }]},
+    "u6_d1": {
+        "freq": 1,
+        "type": "w",
+        "aps": [{ "c": "c_delta_5", "r": null, "sp": [["Cr","idR",1]], "jp": null }]},
+    "u7_d1": {
+        "freq": 1,
+        "type": "w",
+        "aps": [{ "c": "c_delta_4", "r": null, "sp": [["Su","idS",1]], "jp": null }]},
+   "u8_d1": {
+        "freq": 1,
+        "type": "w",
+        "aps": [{ "c": "c_delta_3", "r": null, "sp": [["Ct","idT",1]], "jp": null }]}
+}
+}
+
+
+

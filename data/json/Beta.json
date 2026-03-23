@@ -1,0 +1,846 @@
+{
+    "collections": {
+       
+        "c_beta_1": {
+            "Or": {
+                "It": null,
+                "Py": null,
+                "Cu": null
+              }
+            
+        },
+        "c_beta_2": {
+            "It": {
+                "Or": {
+                    "Py": null,
+                    "Cu": null
+                  }
+            }
+        },
+        "c_beta_3": {
+            "Cr": null
+        },
+        "c_beta_4": {
+            "Pr": {
+                "Ct": null
+              }
+        },
+        "c_beta_5": {
+            "Su": null
+        }
+    
+
+    },
+    "indexes": {
+        "c_beta_1": {
+                    "IX": [
+                       
+                        [["It","quantity"]],
+                        [["It","quantity"],["Cu", "country"]],
+                        [["Or","idO"]],
+                        [["Cu","idC"]],
+                        [["Or", "date" ]],
+                        [["Cu", "country" ],["Or","idR" ]],
+                        [["Cu", "country"]],
+                        [["It","idP"]],
+                        [["Or","idR"]]
+                    ]
+                    
+                },
+                "c_beta_2": {
+                    "IX": [ [["Cu", "country"], ["It", "idP"]],
+                    [["It", "idI"]],
+                    [["It", "idP"]],
+                    [["Or", "idO"]]]
+                },
+                "c_beta_3": {
+                    "IX": [
+                        [["Cr","name"],["Cr","idR"]],
+                        [["Cr","name"]],
+                        [["Cr","idR"]]]
+                },
+                "c_beta_4": {
+                    "IX": [
+                        [
+                            [
+                                "Ct",
+                                "idT"
+                            ]
+                        ],
+                        [
+                            [
+                                "Pr",
+                                "price"
+                            ]
+                        ],
+                        [
+                            [
+                                "Ct",
+                                "description"
+                            ]
+                        ],
+                        [
+                            [
+                                "Pr",
+                                "idP"
+                            ]
+                        ]
+                    ]
+                },
+                "c_beta_5": {
+                    "IX": [
+                        [
+                            [
+                                "Su",
+                                "name"
+                            ],
+                            [
+                                "Su",
+                                "idS"
+                            ]
+                        ],
+                        [
+                            [
+                                "Su",
+                                "idS"
+                            ]
+                        ]
+                    ]
+                }
+            },
+        
+        
+            "query_plans": {
+                "qp_e1_or_f1_b1": {
+                    "freq": 1,
+                    "type": "r",
+                    "aps": [
+                        {
+                            "c": "c_beta_1",
+                            "r": null,
+                            "sp": [
+                                [
+                                    "Or",
+                                    "idO",
+                                    1
+                                ]
+                            ],
+                            "jp": null
+                        }
+                    ]
+                },
+                "qp_e1_or_f2_b1": {
+                    "freq": 1,
+                    "type": "r",
+                    "aps": [
+                        {
+                            "c": "c_beta_1",
+                            "r": null,
+                            "sp": [
+                                [
+                                    "Or",
+                                    "date",
+                                    3
+                                ]
+                            ],
+                            "jp": null
+                        }
+                    ]
+                },
+                "qp_e3_cu_f1_b1": {
+                    "freq": 1,
+                    "type": "r",
+                    "aps": [
+                        {
+                            "c": "c_beta_1",
+                            "r": null,
+                            "sp": [
+                                [
+                                    "Cu",
+                                    "idC",
+                                    1
+                                ]
+                            ],
+                            "jp": null
+                        },
+                        {
+                            "c": "c_beta_3",
+                            "r": "delivers",
+                            "sp": [],
+                            "jp": [
+                                [
+                                    "Or",
+                                    "idR"
+                                ],
+                                [
+                                    "Cr",
+                                    "idR"
+                                ]
+                            ]
+                        }
+                    ]
+                },
+                "qp_e3_cu_f2_b1": {
+                    "freq": 1,
+                    "type": "r",
+                    "aps": [
+                        {
+                            "c": "c_beta_1",
+                            "r": null,
+                            "sp": [
+                                [
+                                    "Cu",
+                                    "country",
+                                    10
+                                ]
+                            ],
+                            "jp": null
+                        },
+                        {
+                            "c": "c_beta_3",
+                            "r": "delivers",
+                            "sp": [],
+                            "jp": [
+                                [
+                                    "Or",
+                                    "idR"
+                                ],
+                                [
+                                    "Cr",
+                                    "idR"
+                                ]
+                            ]
+                        }
+                    ]
+                },
+                "qp_e3_cu_f3_b1": {
+                    "freq": 1,
+                    "type": "r",
+                    "aps": [
+                        {
+                            "c": "c_beta_1",
+                            "r": null,
+                            "sp": [
+                                [
+                                    "Cu",
+                                    "country",
+                                    10
+                                ]
+                            ],
+                            "jp": null
+                        },
+                        {
+                            "c": "c_beta_3",
+                            "r": "delivers",
+                            "sp": [
+                                [
+                                    "Cr",
+                                    "name",
+                                    10
+                                ]
+                            ],
+                            "jp": [
+                                [
+                                    "Or",
+                                    "idR"
+                                ],
+                                [
+                                    "Cr",
+                                    "idR"
+                                ]
+                            ]
+                        }
+                    ]
+                },
+                "qp_e3_cr_f1_b1": {
+                    "freq": 1,
+                    "type": "r",
+                    "aps": [
+                        {
+                            "c": "c_beta_3",
+                            "r": null,
+                            "sp": [
+                                [
+                                    "Cr",
+                                    "idR",
+                                    1
+                                ]
+                            ],
+                            "jp": null
+                        },
+                        {
+                            "c": "c_beta_1",
+                            "r": "delivers",
+                            "sp": [],
+                            "jp": [
+                                [
+                                    "Cr",
+                                    "idR"
+                                ],
+                                [
+                                    "Or",
+                                    "idR"
+                                ]
+                            ]
+                        }
+                    ]
+                },
+                "qp_e3_cr_f2_b1": {
+                    "freq": 1,
+                    "type": "r",
+                    "aps": [
+                        {
+                            "c": "c_beta_3",
+                            "r": null,
+                            "sp": [
+                                [
+                                    "Cr",
+                                    "name",
+                                    2
+                                ]
+                            ],
+                            "jp": null
+                        },
+                        {
+                            "c": "c_beta_1",
+                            "r": "delivers",
+                            "sp": [],
+                            "jp": [
+                                [
+                                    "Cr",
+                                    "idR"
+                                ],
+                                [
+                                    "Or",
+                                    "idR"
+                                ]
+                            ]
+                        }
+                    ]
+                },
+                "qp_e3_cr_f3_b1": {
+                    "freq": 1,
+                    "type": "r",
+                    "aps": [
+                        {
+                            "c": "c_beta_3",
+                            "r": null,
+                            "sp": [
+                                [
+                                    "Cr",
+                                    "name",
+                                    2
+                                ]
+                            ],
+                            "jp": null
+                        },
+                        {
+                            "c": "c_beta_1",
+                            "r": "delivers",
+                            "sp": [
+                                [
+                                    "Cu",
+                                    "country",
+                                    30
+                                ]
+                            ],
+                            "jp": [
+                                [
+                                    "Cr",
+                                    "idR"
+                                ],
+                                [
+                                    "Or",
+                                    "idR"
+                                ]
+                            ]
+                        }
+                    ]
+                },
+
+                
+                "qp_e7_it_f1_b2": {
+                    "freq": 1,
+                    "type": "r",
+                    "aps": [
+                        {
+                            "c": "c_beta_2",
+                            "r": null,
+                            "sp": [
+                                [
+                                    "It",
+                                    "idI",
+                                    1
+                                ]
+                            ],
+                            "jp": null
+                        },
+                        {
+                            "c": "c_beta_4",
+                            "r": "references",
+                            "sp": [],
+                            "jp": [
+                                [
+                                    "It",
+                                    "idP"
+                                ],
+                                [
+                                    "Pr",
+                                    "idP"
+                                ]
+                            ]
+                        },
+                        {
+                            "c": "c_beta_5",
+                            "r": "furnishes",
+                            "sp": [],
+                            "jp": [
+                                [
+                                    "Pr",
+                                    "idS"
+                                ],
+                                [
+                                    "Su",
+                                    "idS"
+                                ]
+                            ]
+                        }
+                    ]
+                },
+
+                "qp_e7_it_f2_b1": {
+                    "freq": 1,
+                    "type": "r",
+                    "aps": [
+                        {
+                            "c": "c_beta_1",
+                            "r": null,
+                            "sp": [
+                                [
+                                    "It",
+                                    "quantity",
+                                    10
+                                ]
+                            ],
+                            "jp": null
+                        },
+                        {
+                            "c": "c_beta_4",
+                            "r": "references",
+                            "sp": [],
+                            "jp": [
+                                [
+                                    "It",
+                                    "idP"
+                                ],
+                                [
+                                    "Pr",
+                                    "idP"
+                                ]
+                            ]
+                        },
+                        {
+                            "c": "c_beta_5",
+                            "r": "furnishes",
+                            "sp": [],
+                            "jp": [
+                                [
+                                    "Pr",
+                                    "idS"
+                                ],
+                                [
+                                    "Su",
+                                    "idS"
+                                ]
+                            ]
+                        }
+                    ]
+                },
+                "qp_e7_it_f3_b1": {
+                    "freq": 1,
+                    "type": "r",
+                    "aps": [
+                        {
+                            "c": "c_beta_1",
+                            "r": null,
+                            "sp": [
+                                [
+                                    "It",
+                                    "quantity",
+                                    10
+                                ],
+                                [
+                                    "Cu",
+                                    "country",
+                                    2
+                                ]
+                            ],
+                            "jp": null
+                        },
+                        {
+                            "c": "c_beta_4",
+                            "r": "references",
+                            "sp": [],
+                            "jp": [
+                                [
+                                    "It",
+                                    "idP"
+                                ],
+                                [
+                                    "Pr",
+                                    "idP"
+                                ]
+                            ]
+                        },
+                        {
+                            "c": "c_beta_5",
+                            "r": "furnishes",
+                            "sp": [],
+                            "jp": [
+                                [
+                                    "Pr",
+                                    "idS"
+                                ],
+                                [
+                                    "Su",
+                                    "idS"
+                                ]
+                            ]
+                        }
+                    ]
+                },
+     
+                "qp_e7_pr_f1_b2": {
+                    "freq": 1,
+                    "type": "r",
+                    "aps": [
+                        {
+                            "c": "c_beta_4",
+                            "r": null,
+                            "sp": [
+                                [
+                                    "Pr",
+                                    "idP",
+                                    1
+                                ]
+                            ],
+                            "jp": null
+                        },
+                        {
+                            "c": "c_beta_5",
+                            "r": "furnishes",
+                            "sp": [],
+                            "jp": [
+                                [
+                                    "Pr",
+                                    "idS"
+                                ],
+                                [
+                                    "Su",
+                                    "idS"
+                                ]
+                            ]
+                        },
+                        {
+                            "c": "c_beta_2",
+                            "r": "references",
+                            "sp": [],
+                            "jp": [
+                                [
+                                    "Pr",
+                                    "idP"
+                                ],
+                                [
+                                    "It",
+                                    "idP"
+                                ]
+                            ]
+                        }
+                    ]
+                },
+                "qp_e7_pr_f2_b1": {
+                    "freq": 1,
+                    "type": "r",
+                    "aps": [
+                        {
+                            "c": "c_beta_4",
+                            "r": null,
+                            "sp": [
+                                [
+                                    "Pr",
+                                    "price",
+                                    10
+                                ]
+                            ],
+                            "jp": null
+                        },
+                        {
+                            "c": "c_beta_5",
+                            "r": "furnishes",
+                            "sp": [],
+                            "jp": [
+                                [
+                                    "Pr",
+                                    "idS"
+                                ],
+                                [
+                                    "Su",
+                                    "idS"
+                                ]
+                            ]
+                        },
+                        {
+                            "c": "c_beta_1",
+                            "r": "references",
+                            "sp": [],
+                            "jp": [
+                                [
+                                    "Pr",
+                                    "idP"
+                                ],
+                                [
+                                    "It",
+                                    "idP"
+                                ]
+                            ]
+                        }
+                    ]
+                },
+                "qp_e7_pr_f3_b1": {
+                    "freq": 1,
+                    "type": "r",
+                    "aps": [
+                        {
+                            "c": "c_beta_4",
+                            "r": null,
+                            "sp": [
+                                [
+                                    "Pr",
+                                    "price",
+                                    50
+                                ]
+                            ],
+                            "jp": null
+                        },
+                        {
+                            "c": "c_beta_1",
+                            "r": "references",
+                            "sp": [],
+                            "jp": [
+                                [
+                                    "Pr",
+                                    "idP"
+                                ],
+                                [
+                                    "It",
+                                    "idP"
+                                ]
+                            ]
+                        },
+                        {
+                            "c": "c_beta_5",
+                            "r": "furnishes",
+                            "sp": [
+                                [
+                                    "Su",
+                                    "name",
+                                    10
+                                ]
+                            ],
+                            "jp": [
+                                [
+                                    "Pr",
+                                    "idS"
+                                ],
+                                [
+                                    "Su",
+                                    "idS"
+                                ]
+                            ]
+                        }
+                    ]
+                },
+                "qp_e7_ct_f1_b2": {
+                        "freq": 1,
+                        "type": "r",
+                        "aps": [
+                            {
+                                "c": "c_beta_4",
+                                "r": null,
+                                "sp": [
+                                    [
+                                        "Ct",
+                                        "idT",
+                                        1
+                                    ]
+                                ],
+                                "jp": null
+                            },
+                            {
+                                "c": "c_beta_5",
+                                "r": "furnishes",
+                                "sp": [],
+                                "jp": [
+                                    [
+                                        "Pr",
+                                        "idS"
+                                    ],
+                                    [
+                                        "Su",
+                                        "idS"
+                                    ]
+                                ]
+                            },
+                            {
+                                "c": "c_beta_2",
+                                "r": "references",
+                                "sp": [],
+                                "jp": [
+                                    [
+                                        "Pr",
+                                        "idP"
+                                    ],
+                                    [
+                                        "It",
+                                        "idP"
+                                    ]
+                                ]
+                            }
+                        ]
+                    },
+                    "qp_e7_ct_f2_b2": {
+                        "freq": 1,
+                        "type": "r",
+                        "aps": [
+                            {
+                                "c": "c_beta_4",
+                                "r": null,
+                                "sp": [
+                                    [
+                                        "Ct",
+                                        "description",
+                                        2
+                                    ]
+                                ],
+                                "jp": null
+                            },
+                            {
+                                "c": "c_beta_5",
+                                "r": "furnishes",
+                                "sp": [],
+                                "jp": [
+                                    [
+                                        "Pr",
+                                        "idS"
+                                    ],
+                                    [
+                                        "Su",
+                                        "idS"
+                                    ]
+                                ]
+                            },
+                            {
+                                "c": "c_beta_2",
+                                "r": "references",
+                                "sp": [],
+                                "jp": [
+                                    [
+                                        "Pr",
+                                        "idP"
+                                    ],
+                                    [
+                                        "It",
+                                        "idP"
+                                    ]
+                                ]
+                            }
+                        ]
+                    },
+                    "qp_e7_ct_f3_b2": {
+                        "freq": 1,
+                        "type": "r",
+                        "aps": [
+                            {
+                                "c": "c_beta_4",
+                                "r": null,
+                                "sp": [
+                                    [
+                                        "Ct",
+                                        "description",
+                                        2
+                                    ]
+                                ],
+                                "jp": null
+                            },
+                            {
+                                "c": "c_beta_5",
+                                "r": "furnishes",
+                                "sp": [],
+                                "jp": [
+                                    [
+                                        "Pr",
+                                        "idS"
+                                    ],
+                                    [
+                                        "Su",
+                                        "idS"
+                                    ]
+                                ]
+                            },
+                            {
+                                "c": "c_beta_2",
+                                "r": "references",
+                                "sp": [
+                                    [
+                                        "Cu",
+                                        "country",
+                                        2
+                                    ]
+                                ],
+                                "jp": [
+                                    [
+                                        "Pr",
+                                        "idP"
+                                    ],
+                                    [
+                                        "It",
+                                        "idP"
+                                    ]
+                                ]
+                            }
+                        ]
+                    },
+                "qp_u1_or_b1": {
+                    "freq": 1,
+                    "type": "w",
+                    "aps": [
+                        {
+                            "c": "c_beta_1",
+                            "r": null,
+                            "sp": [
+                                [
+                                    "Or",
+                                    "idO",
+                                    1
+                                ]
+                            ],
+                            "jp": null
+                        },
+                        {
+                            "c": "c_beta_2",
+                            "r": null,
+                            "sp": [
+                                [
+                                    "Or",
+                                    "idO",
+                                    1
+                                ]
+                            ],
+                            "jp": null
+                        }
+                    ]
+                }
+            }
+}    
+    
+

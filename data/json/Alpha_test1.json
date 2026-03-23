@@ -1,0 +1,75 @@
+{
+  "collections": {
+    "c_alpha_1": {
+      "Cu": {
+        "Or": {
+          "Cr": null,
+          "Py": null
+        }
+      }
+    },
+    "c_alpha_2": {
+      "Pr": {
+        "It": null,
+        "Su": null
+      }
+    },
+    "c_alpha_3": {
+      "Ct": null
+    }
+  },
+  "indexes": {
+    "c_alpha_1": {
+      "IX": [
+        [
+          [
+            "Cu",
+            "idC"
+          ]
+        ]
+      ]
+    },
+    "c_alpha_2": {
+      "IX": []
+    },
+    "c_alpha_3": {
+      "IX": []
+    }
+  },
+  "query_plans": {
+    "q1": {
+      "freq": 1,
+      "type": "r",
+      "aps": [
+        {
+          "c": "c_alpha_1",
+          "r": null,
+          "sp": [
+            [
+              "Cu",
+              "idC",
+              1
+            ]
+          ]
+        }
+      ]
+    },
+    "q2": {
+      "freq": 1,
+      "type": "r",
+      "aps": [
+        {
+          "c": "c_alpha_1",
+          "r": null,
+          "sp": [
+            [
+              "Cu",
+              "idC",
+              1
+            ]
+          ]
+        }
+      ]
+    }
+  }
+}

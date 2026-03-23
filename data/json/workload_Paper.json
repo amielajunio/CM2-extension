@@ -1,0 +1,260 @@
+{
+  "workload": {
+    "Q1": {
+      "f": 1,
+      "type": "r",
+      "entities": ["Or"],
+      "rels": [],
+      "pred": [
+        ["Or", "idO", 1]
+      ]
+    },
+
+    "Q2": {
+      "f": 1,
+      "type": "r",
+      "entities": ["Or"],
+      "rels": [],
+      "pred": [
+        ["Or", "date", 3]
+      ]
+    },
+
+    "Q3": {
+      "f": 1,
+      "type": "r",
+      "entities": ["Cu", "Or", "Cr"],
+      "rels": ["requests", "delivers"],
+      "pred": [
+        ["Cu", "idC", 1]
+      ]
+    },
+
+    "Q4": {
+      "f": 1,
+      "type": "r",
+      "entities": ["Cu", "Or", "Cr"],
+      "rels": ["requests", "delivers"],
+      "pred": [
+        ["Cu", "country", 10]
+      ]
+    },
+
+    "Q5": {
+      "f": 1,
+      "type": "r",
+      "entities": ["Cu", "Or", "Cr"],
+      "rels": ["requests", "delivers"],
+      "pred": [
+        ["Cu", "country", 10],
+        ["Cr", "name", 10]
+      ]
+    },
+
+    "Q6": {
+      "f": 1,
+      "type": "r",
+      "entities": ["Cr", "Or", "Cu"],
+      "rels": ["delivers", "requests"],
+      "pred": [
+        ["Cr", "idR", 1]
+      ]
+    },
+
+    "Q7": {
+      "f": 1,
+      "type": "r",
+      "entities": ["Cr", "Or", "Cu"],
+      "rels": ["delivers", "requests"],
+      "pred": [
+        ["Cr", "name", 2]
+      ]
+    },
+
+    "Q8": {
+      "f": 1,
+      "type": "r",
+      "entities": ["Cr", "Or", "Cu"],
+      "rels": ["delivers", "requests"],
+      "pred": [
+        ["Cr", "name", 2],
+        ["Cu", "country", 30]
+      ]
+    },
+
+    "Q9": {
+      "f": 1,
+      "type": "r",
+      "entities": ["It", "Cu", "Or", "Pr", "Cr", "Py", "Su", "Ct"],
+      "rels": [
+        "requests",
+        "consists_of",
+        "commits",
+        "delivers",
+        "references",
+        "catalogues",
+        "furnishes"
+      ],
+      "pred": [
+        ["It", "idI", 1]
+      ]
+    },
+
+    "Q10": {
+      "f": 1,
+      "type": "r",
+      "entities": ["It", "Cu", "Or", "Pr", "Cr", "Py", "Su", "Ct"],
+      "rels": [
+        "requests",
+        "consists_of",
+        "commits",
+        "delivers",
+        "references",
+        "catalogues",
+        "furnishes"
+      ],
+      "pred": [
+        ["It", "quantity", 10]
+      ]
+    },
+
+    "Q11": {
+      "f": 1,
+      "type": "r",
+      "entities": ["It", "Cu", "Or", "Pr", "Cr", "Py", "Su", "Ct"],
+      "rels": [
+        "requests",
+        "consists_of",
+        "commits",
+        "delivers",
+        "references",
+        "catalogues",
+        "furnishes"
+      ],
+      "pred": [
+        ["It", "quantity", 10],
+        ["Cu", "country", 2]
+      ]
+    },
+
+    "Q12": {
+      "f": 1,
+      "type": "r",
+      "entities": ["Pr", "Cu", "Or", "It", "Cr", "Py", "Su", "Ct"],
+      "rels": [
+        "requests",
+        "consists_of",
+        "commits",
+        "delivers",
+        "references",
+        "catalogues",
+        "furnishes"
+      ],
+      "pred": [
+        ["Pr", "idP", 1]
+      ]
+    },
+
+    "Q13": {
+      "f": 1,
+      "type": "r",
+      "entities": ["Pr", "Cu", "Or", "It", "Cr", "Py", "Su", "Ct"],
+      "rels": [
+        "requests",
+        "consists_of",
+        "commits",
+        "delivers",
+        "references",
+        "catalogues",
+        "furnishes"
+      ],
+      "pred": [
+        ["Pr", "price", 10]
+      ]
+    },
+
+    "Q14": {
+      "f": 1,
+      "type": "r",
+      "entities": ["Pr", "Cu", "Or", "It", "Cr", "Py", "Su", "Ct"],
+      "rels": [
+        "requests",
+        "consists_of",
+        "commits",
+        "delivers",
+        "references",
+        "catalogues",
+        "furnishes"
+      ],
+      "pred": [
+        ["Pr", "price", 50],
+        ["Su", "name", 10]
+      ]
+    },
+
+    "Q15": {
+      "f": 1,
+      "type": "r",
+      "entities": ["Ct", "Cu", "Or", "It", "Pr", "Cr", "Py", "Su"],
+      "rels": [
+        "requests",
+        "consists_of",
+        "commits",
+        "delivers",
+        "references",
+        "catalogues",
+        "furnishes"
+      ],
+      "pred": [
+        ["Ct", "idT", 1]
+      ]
+    },
+
+    "Q16": {
+      "f": 1,
+      "type": "r",
+      "entities": ["Ct", "Cu", "Or", "It", "Pr", "Cr", "Py", "Su"],
+      "rels": [
+        "requests",
+        "consists_of",
+        "commits",
+        "delivers",
+        "references",
+        "catalogues",
+        "furnishes"
+      ],
+      "pred": [
+        ["Ct", "description", 2]
+      ]
+    },
+
+    "Q17": {
+      "f": 1,
+      "type": "r",
+      "entities": ["Ct", "Cu", "Or", "It", "Pr", "Cr", "Py", "Su"],
+      "rels": [
+        "requests",
+        "consists_of",
+        "commits",
+        "delivers",
+        "references",
+        "catalogues",
+        "furnishes"
+      ],
+      "pred": [
+        ["Ct", "description", 2],
+        ["Cu", "country", 2]
+      ]
+    },
+
+    "Q18": {
+      "f": 1,
+      "type": "w",
+      "entities": ["Or"],
+      "rels": [],
+      "pred": [
+        ["Or", "idO", 1]
+      ]
+    }
+  }
+}

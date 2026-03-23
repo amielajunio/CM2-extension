@@ -1,0 +1,924 @@
+{
+  "collections": {
+    "c_alpha_1": {
+      "Bd": {
+        "Us": {
+          "Re": null
+        }
+      }
+    },
+    "c_alpha_2": {
+      "It": {
+        "Bn": null,
+        "Ct": null
+      }
+    },
+    "c_alpha_3": {
+      "Co": {
+        "C2": null
+      }
+    }
+  },
+  "indexes": {
+    "c_alpha_1": {
+      "IX": [
+        [
+          [
+            "Bd",
+            "item"
+          ]
+        ],
+        [
+          [
+            "Re",
+            "name"
+          ]
+        ],
+        [
+          [
+            "Re",
+            "idR"
+          ]
+        ],
+        [
+          [
+            "Us",
+            "rating"
+          ]
+        ],
+        [
+          [
+            "Bd",
+            "bid"
+          ],
+          [
+            "Us",
+            "idU"
+          ]
+        ],
+        [
+          [
+            "Bd",
+            "item"
+          ],
+          [
+            "Us",
+            "rating"
+          ]
+        ],
+        [
+          [
+            "It",
+            "idI"
+          ]
+        ],
+        [
+          [
+            "Us",
+            "idU"
+          ]
+        ]
+      ]
+    },
+    "c_alpha_2": {
+      "IX": [
+        [
+          [
+            "Bd",
+            "item"
+          ]
+        ],
+        [
+          [
+            "It",
+            "start_date"
+          ]
+        ],
+        [
+          [
+            "Ct",
+            "name"
+          ]
+        ],
+        [
+          [
+            "Ct",
+            "idT"
+          ]
+        ],
+        [
+          [
+            "It",
+            "seller"
+          ]
+        ],
+        [
+          [
+            "It",
+            "seller"
+          ],
+          [
+            "It",
+            "start_date"
+          ]
+        ],
+        [
+          [
+            "Bn",
+            "idN"
+          ]
+        ],
+        [
+          [
+            "It",
+            "idI"
+          ]
+        ],
+        [
+          [
+            "It",
+            "idI"
+          ],
+          [
+            "It",
+            "start_date"
+          ]
+        ],
+        [
+          [
+            "Bn",
+            "date"
+          ],
+          [
+            "Ct",
+            "name"
+          ]
+        ]
+      ]
+    },
+    "c_alpha_3": {
+      "IX": [
+        [
+          [
+            "Co",
+            "item"
+          ]
+        ],
+        [
+          [
+            "Co",
+            "idC"
+          ]
+        ],
+        [
+          [
+            "Co",
+            "date"
+          ]
+        ]
+      ]
+    }
+  },
+  "query_plans": {
+    "q1": {
+      "freq": 1.0,
+      "type": "r",
+      "aps": [
+        {
+          "c": "c_alpha_1",
+          "r": null,
+          "sp": [
+            [
+              "Us",
+              "idU",
+              1
+            ]
+          ]
+        }
+      ]
+    },
+    "q2": {
+      "freq": 1.0,
+      "type": "r",
+      "aps": [
+        {
+          "c": "c_alpha_1",
+          "r": null,
+          "sp": [
+            [
+              "Us",
+              "rating",
+              10
+            ]
+          ]
+        }
+      ]
+    },
+    "q3": {
+      "freq": 1.0,
+      "type": "r",
+      "aps": [
+        {
+          "c": "c_alpha_1",
+          "r": null,
+          "sp": [
+            [
+              "Us",
+              "idU",
+              1
+            ]
+          ]
+        },
+        {
+          "c": "c_alpha_2",
+          "r": "gets",
+          "sp": [],
+          "jp": [
+            [
+              "Bd",
+              "item"
+            ],
+            [
+              "It",
+              "idI"
+            ]
+          ]
+        }
+      ]
+    },
+    "q4": {
+      "freq": 1.0,
+      "type": "r",
+      "aps": [
+        {
+          "c": "c_alpha_1",
+          "r": null,
+          "sp": [
+            [
+              "Us",
+              "rating",
+              10
+            ]
+          ]
+        },
+        {
+          "c": "c_alpha_2",
+          "r": "gets",
+          "sp": [],
+          "jp": [
+            [
+              "Bd",
+              "item"
+            ],
+            [
+              "It",
+              "idI"
+            ]
+          ]
+        }
+      ]
+    },
+    "q5": {
+      "freq": 1.0,
+      "type": "r",
+      "aps": [
+        {
+          "c": "c_alpha_1",
+          "r": null,
+          "sp": [
+            [
+              "Us",
+              "rating",
+              10
+            ]
+          ]
+        },
+        {
+          "c": "c_alpha_2",
+          "r": "gets",
+          "sp": [
+            [
+              "It",
+              "start_date",
+              10
+            ]
+          ],
+          "jp": [
+            [
+              "Bd",
+              "item"
+            ],
+            [
+              "It",
+              "idI"
+            ]
+          ]
+        }
+      ]
+    },
+    "q6": {
+      "freq": 1.0,
+      "type": "r",
+      "aps": [
+        {
+          "c": "c_alpha_2",
+          "r": null,
+          "sp": [
+            [
+              "It",
+              "idI",
+              1
+            ]
+          ]
+        },
+        {
+          "c": "c_alpha_1",
+          "r": "gets",
+          "sp": [],
+          "jp": [
+            [
+              "It",
+              "idI"
+            ],
+            [
+              "Bd",
+              "item"
+            ]
+          ]
+        }
+      ]
+    },
+    "q7": {
+      "freq": 1.0,
+      "type": "r",
+      "aps": [
+        {
+          "c": "c_alpha_2",
+          "r": null,
+          "sp": [
+            [
+              "It",
+              "start_date",
+              10
+            ]
+          ]
+        },
+        {
+          "c": "c_alpha_1",
+          "r": "gets",
+          "sp": [],
+          "jp": [
+            [
+              "It",
+              "idI"
+            ],
+            [
+              "Bd",
+              "item"
+            ]
+          ]
+        }
+      ]
+    },
+    "q8": {
+      "freq": 1.0,
+      "type": "r",
+      "aps": [
+        {
+          "c": "c_alpha_2",
+          "r": null,
+          "sp": [
+            [
+              "It",
+              "start_date",
+              10
+            ]
+          ]
+        },
+        {
+          "c": "c_alpha_1",
+          "r": "gets",
+          "sp": [
+            [
+              "Us",
+              "rating",
+              10
+            ]
+          ],
+          "jp": [
+            [
+              "It",
+              "idI"
+            ],
+            [
+              "Bd",
+              "item"
+            ]
+          ]
+        }
+      ]
+    },
+    "q9": {
+      "freq": 1.0,
+      "type": "r",
+      "aps": [
+        {
+          "c": "c_alpha_3",
+          "r": null,
+          "sp": [
+            [
+              "Co",
+              "idC",
+              1
+            ]
+          ]
+        },
+        {
+          "c": "c_alpha_1",
+          "r": "writes",
+          "sp": [],
+          "jp": [
+            [
+              "Co",
+              "from_user"
+            ],
+            [
+              "Us",
+              "idU"
+            ]
+          ]
+        },
+        {
+          "c": "c_alpha_2",
+          "r": "gets",
+          "sp": [],
+          "jp": [
+            [
+              "Bd",
+              "item"
+            ],
+            [
+              "It",
+              "idI"
+            ]
+          ]
+        }
+      ]
+    },
+    "q10": {
+      "freq": 1.0,
+      "type": "r",
+      "aps": [
+        {
+          "c": "c_alpha_3",
+          "r": null,
+          "sp": [
+            [
+              "Co",
+              "date",
+              10
+            ]
+          ]
+        },
+        {
+          "c": "c_alpha_1",
+          "r": "writes",
+          "sp": [],
+          "jp": [
+            [
+              "Co",
+              "from_user"
+            ],
+            [
+              "Us",
+              "idU"
+            ]
+          ]
+        },
+        {
+          "c": "c_alpha_2",
+          "r": "gets",
+          "sp": [],
+          "jp": [
+            [
+              "Bd",
+              "item"
+            ],
+            [
+              "It",
+              "idI"
+            ]
+          ]
+        }
+      ]
+    },
+    "q11": {
+      "freq": 1.0,
+      "type": "r",
+      "aps": [
+        {
+          "c": "c_alpha_3",
+          "r": null,
+          "sp": [
+            [
+              "Co",
+              "date",
+              10
+            ]
+          ]
+        },
+        {
+          "c": "c_alpha_1",
+          "r": "writes",
+          "sp": [
+            [
+              "Bd",
+              "bid",
+              2
+            ]
+          ],
+          "jp": [
+            [
+              "Co",
+              "from_user"
+            ],
+            [
+              "Us",
+              "idU"
+            ]
+          ]
+        },
+        {
+          "c": "c_alpha_2",
+          "r": "gets",
+          "sp": [],
+          "jp": [
+            [
+              "Bd",
+              "item"
+            ],
+            [
+              "It",
+              "idI"
+            ]
+          ]
+        }
+      ]
+    },
+    "q12": {
+      "freq": 1.0,
+      "type": "r",
+      "aps": [
+        {
+          "c": "c_alpha_2",
+          "r": null,
+          "sp": [
+            [
+              "Ct",
+              "idT",
+              1
+            ]
+          ]
+        },
+        {
+          "c": "c_alpha_1",
+          "r": "purchases",
+          "sp": [],
+          "jp": [
+            [
+              "Bn",
+              "buyer"
+            ],
+            [
+              "Us",
+              "idU"
+            ]
+          ]
+        },
+        {
+          "c": "c_alpha_3",
+          "r": "reviews",
+          "sp": [],
+          "jp": [
+            [
+              "It",
+              "idI"
+            ],
+            [
+              "Co",
+              "item"
+            ]
+          ]
+        }
+      ]
+    },
+    "q13": {
+      "freq": 1.0,
+      "type": "r",
+      "aps": [
+        {
+          "c": "c_alpha_2",
+          "r": null,
+          "sp": [
+            [
+              "Ct",
+              "name",
+              10
+            ]
+          ]
+        },
+        {
+          "c": "c_alpha_1",
+          "r": "purchases",
+          "sp": [],
+          "jp": [
+            [
+              "Bn",
+              "buyer"
+            ],
+            [
+              "Us",
+              "idU"
+            ]
+          ]
+        },
+        {
+          "c": "c_alpha_3",
+          "r": "reviews",
+          "sp": [],
+          "jp": [
+            [
+              "It",
+              "idI"
+            ],
+            [
+              "Co",
+              "item"
+            ]
+          ]
+        }
+      ]
+    },
+    "q14": {
+      "freq": 1.0,
+      "type": "r",
+      "aps": [
+        {
+          "c": "c_alpha_2",
+          "r": null,
+          "sp": [
+            [
+              "Ct",
+              "name",
+              30
+            ],
+            [
+              "Bn",
+              "date",
+              10
+            ]
+          ]
+        },
+        {
+          "c": "c_alpha_1",
+          "r": "purchases",
+          "sp": [],
+          "jp": [
+            [
+              "Bn",
+              "buyer"
+            ],
+            [
+              "Us",
+              "idU"
+            ]
+          ]
+        },
+        {
+          "c": "c_alpha_3",
+          "r": "reviews",
+          "sp": [],
+          "jp": [
+            [
+              "It",
+              "idI"
+            ],
+            [
+              "Co",
+              "item"
+            ]
+          ]
+        }
+      ]
+    },
+    "q15": {
+      "freq": 1.0,
+      "type": "r",
+      "aps": [
+        {
+          "c": "c_alpha_1",
+          "r": null,
+          "sp": [
+            [
+              "Re",
+              "idR",
+              1
+            ]
+          ]
+        },
+        {
+          "c": "c_alpha_2",
+          "r": "sells",
+          "sp": [],
+          "jp": [
+            [
+              "Us",
+              "idU"
+            ],
+            [
+              "It",
+              "seller"
+            ]
+          ]
+        },
+        {
+          "c": "c_alpha_3",
+          "r": "reviews",
+          "sp": [],
+          "jp": [
+            [
+              "It",
+              "idI"
+            ],
+            [
+              "Co",
+              "item"
+            ]
+          ]
+        },
+        {
+          "c": "c_alpha_2",
+          "r": "gets",
+          "sp": [],
+          "jp": [
+            [
+              "It",
+              "idI"
+            ],
+            [
+              "Bd",
+              "item"
+            ]
+          ]
+        }
+      ]
+    },
+    "q16": {
+      "freq": 1.0,
+      "type": "r",
+      "aps": [
+        {
+          "c": "c_alpha_1",
+          "r": null,
+          "sp": [
+            [
+              "Re",
+              "name",
+              2
+            ]
+          ]
+        },
+        {
+          "c": "c_alpha_2",
+          "r": "sells",
+          "sp": [],
+          "jp": [
+            [
+              "Us",
+              "idU"
+            ],
+            [
+              "It",
+              "seller"
+            ]
+          ]
+        },
+        {
+          "c": "c_alpha_3",
+          "r": "reviews",
+          "sp": [],
+          "jp": [
+            [
+              "It",
+              "idI"
+            ],
+            [
+              "Co",
+              "item"
+            ]
+          ]
+        },
+        {
+          "c": "c_alpha_2",
+          "r": "gets",
+          "sp": [],
+          "jp": [
+            [
+              "It",
+              "idI"
+            ],
+            [
+              "Bd",
+              "item"
+            ]
+          ]
+        }
+      ]
+    },
+    "q17": {
+      "freq": 1.0,
+      "type": "r",
+      "aps": [
+        {
+          "c": "c_alpha_1",
+          "r": null,
+          "sp": [
+            [
+              "Re",
+              "name",
+              2
+            ]
+          ]
+        },
+        {
+          "c": "c_alpha_2",
+          "r": "sells",
+          "sp": [
+            [
+              "It",
+              "start_date",
+              10
+            ]
+          ],
+          "jp": [
+            [
+              "Us",
+              "idU"
+            ],
+            [
+              "It",
+              "seller"
+            ]
+          ]
+        },
+        {
+          "c": "c_alpha_3",
+          "r": "reviews",
+          "sp": [],
+          "jp": [
+            [
+              "It",
+              "idI"
+            ],
+            [
+              "Co",
+              "item"
+            ]
+          ]
+        },
+        {
+          "c": "c_alpha_1",
+          "r": "gets",
+          "sp": [],
+          "jp": [
+            [
+              "Bd",
+              "item"
+            ],
+            [
+              "It",
+              "idI"
+            ]
+          ]
+        }
+      ]
+    },
+    "q18": {
+      "freq": 1.0,
+      "type": "w",
+      "aps": [
+        {
+          "c": "c_alpha_2",
+          "r": null,
+          "sp": [
+            [
+              "Bn",
+              "idN",
+              1
+            ]
+          ]
+        }
+      ]
+    }
+  }
+}

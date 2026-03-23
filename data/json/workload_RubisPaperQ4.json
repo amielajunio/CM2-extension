@@ -1,0 +1,28 @@
+{
+  "workload": {
+
+   
+
+    "Q4": {
+      "f": 1.54,
+      "type": "r",
+      "entities": ["It", "Bd", "Us"],
+      "rels": ["gets", "places"],
+      "pred": [
+        ["It", "idI", 1]
+      ]
+    },
+    "Q40": {
+      "f": 1.54,
+      "type": "r",
+      "entities": ["It", "Us"],
+      "rels": ["sells"],
+      "pred": [
+        ["It", "idI", 1]
+      ]
+    }
+
+
+     }
+}
+

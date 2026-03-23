@@ -1,0 +1,656 @@
+{
+  "collections": {
+    "c_alpha_1": {
+      "Us": {
+        "Re": null,
+        "Co": {
+          "C2": null
+        }
+      }
+    },
+    "c_alpha_2": {
+      "It": {
+        "Bn": null,
+        "Ct": null
+      }
+    },
+    "c_alpha_3": {
+      "Bd": null
+    }
+  },
+  "indexes": {
+    "c_alpha_1": {
+      "IX": [
+        [
+          [
+            "Re",
+            "idR"
+          ]
+        ],
+        [
+          [
+            "Co",
+            "idC"
+          ]
+        ],
+        [
+          [
+            "Re",
+            "idR"
+          ],
+          [
+            "Us",
+            "idU"
+          ]
+        ],
+        [
+          [
+            "C2",
+            "to_user"
+          ]
+        ],
+        [
+          [
+            "Us",
+            "idU"
+          ]
+        ]
+      ]
+    },
+    "c_alpha_2": {
+      "IX": [
+        [
+          [
+            "It",
+            "end_date"
+          ],
+          [
+            "It",
+            "seller"
+          ]
+        ],
+        [
+          [
+            "Ct",
+            "idT"
+          ],
+          [
+            "It",
+            "end_date"
+          ]
+        ],
+        [
+          [
+            "Ct",
+            "idT"
+          ]
+        ],
+        [
+          [
+            "Bn",
+            "idN"
+          ]
+        ],
+        [
+          [
+            "It",
+            "idI"
+          ]
+        ],
+        [
+          [
+            "Bn",
+            "buyer"
+          ],
+          [
+            "Bn",
+            "date"
+          ]
+        ],
+        [
+          [
+            "It",
+            "end_date"
+          ],
+          [
+            "It",
+            "idI"
+          ]
+        ]
+      ]
+    },
+    "c_alpha_3": {
+      "IX": [
+        [
+          [
+            "Bd",
+            "item"
+          ]
+        ],
+        [
+          [
+            "Bd",
+            "user"
+          ]
+        ],
+        [
+          [
+            "Bd",
+            "idB"
+          ]
+        ]
+      ]
+    }
+  },
+  "query_plans": {
+    "q1": {
+      "freq": 13.51,
+      "type": "r",
+      "aps": [
+        {
+          "c": "c_alpha_1",
+          "r": null,
+          "sp": [
+            [
+              "Us",
+              "idU",
+              1
+            ]
+          ]
+        }
+      ]
+    },
+    "q2": {
+      "freq": 7.65,
+      "type": "r",
+      "aps": [
+        {
+          "c": "c_alpha_2",
+          "r": null,
+          "sp": [
+            [
+              "Ct",
+              "idT",
+              1
+            ]
+          ]
+        }
+      ]
+    },
+    "q3": {
+      "freq": 1.54,
+      "type": "r",
+      "aps": [
+        {
+          "c": "c_alpha_2",
+          "r": null,
+          "sp": [
+            [
+              "It",
+              "idI",
+              1
+            ]
+          ]
+        }
+      ]
+    },
+    "q4": {
+      "freq": 1.54,
+      "type": "r",
+      "aps": [
+        {
+          "c": "c_alpha_2",
+          "r": null,
+          "sp": [
+            [
+              "It",
+              "idI",
+              1
+            ]
+          ]
+        },
+        {
+          "c": "c_alpha_3",
+          "r": "gets",
+          "sp": [],
+          "jp": [
+            [
+              "It",
+              "idI"
+            ],
+            [
+              "Bd",
+              "item"
+            ]
+          ]
+        },
+        {
+          "c": "c_alpha_1",
+          "r": "places",
+          "sp": [],
+          "jp": [
+            [
+              "Bd",
+              "user"
+            ],
+            [
+              "Us",
+              "idU"
+            ]
+          ]
+        }
+      ]
+    },
+    "q5": {
+      "freq": 14.17,
+      "type": "r",
+      "aps": [
+        {
+          "c": "c_alpha_2",
+          "r": null,
+          "sp": [
+            [
+              "It",
+              "idI",
+              1
+            ]
+          ]
+        },
+        {
+          "c": "c_alpha_3",
+          "r": "gets",
+          "sp": [],
+          "jp": [
+            [
+              "It",
+              "idI"
+            ],
+            [
+              "Bd",
+              "item"
+            ]
+          ]
+        }
+      ]
+    },
+    "q6": {
+      "freq": 15.94,
+      "type": "r",
+      "aps": [
+        {
+          "c": "c_alpha_2",
+          "r": null,
+          "sp": [
+            [
+              "Ct",
+              "idT",
+              1
+            ],
+            [
+              "It",
+              "end_date",
+              180
+            ]
+          ]
+        }
+      ]
+    },
+    "q8": {
+      "freq": 4.19,
+      "type": "r",
+      "aps": [
+        {
+          "c": "c_alpha_1",
+          "r": null,
+          "sp": [
+            [
+              "Us",
+              "idU",
+              1
+            ]
+          ]
+        },
+        {
+          "c": "c_alpha_1",
+          "r": "receives",
+          "sp": [],
+          "jp": [
+            [
+              "Us",
+              "idU"
+            ],
+            [
+              "C2",
+              "to_user"
+            ]
+          ]
+        }
+      ]
+    },
+    "q15": {
+      "freq": 1.71,
+      "type": "r",
+      "aps": [
+        {
+          "c": "c_alpha_1",
+          "r": null,
+          "sp": [
+            [
+              "Co",
+              "idC",
+              1
+            ]
+          ]
+        }
+      ]
+    },
+    "q16": {
+      "freq": 1.71,
+      "type": "r",
+      "aps": [
+        {
+          "c": "c_alpha_1",
+          "r": null,
+          "sp": [
+            [
+              "Us",
+              "idU",
+              1
+            ]
+          ]
+        },
+        {
+          "c": "c_alpha_2",
+          "r": "purchases",
+          "sp": [
+            [
+              "Bn",
+              "date",
+              180
+            ]
+          ],
+          "jp": [
+            [
+              "Us",
+              "idU"
+            ],
+            [
+              "Bn",
+              "buyer"
+            ]
+          ]
+        }
+      ]
+    },
+    "q17": {
+      "freq": 1.71,
+      "type": "r",
+      "aps": [
+        {
+          "c": "c_alpha_1",
+          "r": null,
+          "sp": [
+            [
+              "Us",
+              "idU",
+              1
+            ]
+          ]
+        },
+        {
+          "c": "c_alpha_2",
+          "r": "sells",
+          "sp": [
+            [
+              "It",
+              "end_date",
+              180
+            ]
+          ],
+          "jp": [
+            [
+              "Us",
+              "idU"
+            ],
+            [
+              "It",
+              "seller"
+            ]
+          ]
+        }
+      ]
+    },
+    "q18": {
+      "freq": 1.71,
+      "type": "r",
+      "aps": [
+        {
+          "c": "c_alpha_1",
+          "r": null,
+          "sp": [
+            [
+              "Us",
+              "idU",
+              1
+            ]
+          ]
+        },
+        {
+          "c": "c_alpha_3",
+          "r": "places",
+          "sp": [],
+          "jp": [
+            [
+              "Us",
+              "idU"
+            ],
+            [
+              "Bd",
+              "user"
+            ]
+          ]
+        },
+        {
+          "c": "c_alpha_2",
+          "r": "gets",
+          "sp": [
+            [
+              "It",
+              "end_date",
+              180
+            ]
+          ],
+          "jp": [
+            [
+              "Bd",
+              "item"
+            ],
+            [
+              "It",
+              "idI"
+            ]
+          ]
+        }
+      ]
+    },
+    "q19": {
+      "freq": 6.34,
+      "type": "r",
+      "aps": [
+        {
+          "c": "c_alpha_2",
+          "r": null,
+          "sp": [
+            [
+              "Ct",
+              "idT",
+              1
+            ],
+            [
+              "It",
+              "end_date",
+              180
+            ]
+          ]
+        },
+        {
+          "c": "c_alpha_1",
+          "r": "sells",
+          "sp": [
+            [
+              "Re",
+              "idR",
+              1
+            ]
+          ],
+          "jp": [
+            [
+              "It",
+              "seller"
+            ],
+            [
+              "Us",
+              "idU"
+            ]
+          ]
+        }
+      ]
+    },
+    "q20": {
+      "freq": 5.39,
+      "type": "r",
+      "aps": [
+        {
+          "c": "c_alpha_1",
+          "r": null,
+          "sp": [
+            [
+              "Re",
+              "idR",
+              1
+            ]
+          ]
+        }
+      ]
+    },
+    "q21": {
+      "freq": 1.52,
+      "type": "w",
+      "aps": [
+        {
+          "c": "c_alpha_1",
+          "r": null,
+          "sp": [
+            [
+              "Us",
+              "idU",
+              1
+            ]
+          ]
+        }
+      ]
+    },
+    "q22": {
+      "freq": 5.37,
+      "type": "w",
+      "aps": [
+        {
+          "c": "c_alpha_2",
+          "r": null,
+          "sp": [
+            [
+              "It",
+              "idI",
+              1
+            ]
+          ]
+        }
+      ]
+    },
+    "q23": {
+      "freq": 0,
+      "type": "w",
+      "aps": [
+        {
+          "c": "c_alpha_2",
+          "r": null,
+          "sp": [
+            [
+              "Ct",
+              "idT",
+              1
+            ]
+          ]
+        }
+      ]
+    },
+    "q24": {
+      "freq": 0,
+      "type": "w",
+      "aps": [
+        {
+          "c": "c_alpha_1",
+          "r": null,
+          "sp": [
+            [
+              "Re",
+              "idR",
+              1
+            ]
+          ]
+        }
+      ]
+    },
+    "q25": {
+      "freq": 3.74,
+      "type": "w",
+      "aps": [
+        {
+          "c": "c_alpha_3",
+          "r": null,
+          "sp": [
+            [
+              "Bd",
+              "idB",
+              1
+            ]
+          ]
+        }
+      ]
+    },
+    "q26": {
+      "freq": 0.45,
+      "type": "w",
+      "aps": [
+        {
+          "c": "c_alpha_1",
+          "r": null,
+          "sp": [
+            [
+              "Co",
+              "idC",
+              1
+            ]
+          ]
+        }
+      ]
+    },
+    "q27": {
+      "freq": 1.1,
+      "type": "w",
+      "aps": [
+        {
+          "c": "c_alpha_2",
+          "r": null,
+          "sp": [
+            [
+              "Bn",
+              "idN",
+              1
+            ]
+          ]
+        }
+      ]
+    }
+  }
+}

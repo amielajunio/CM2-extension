@@ -1,0 +1,17 @@
+{
+  "workload": {
+
+    "Q22": {
+      "f": 5.37,
+      "type": "w",
+      "entities": ["It"],
+      "rels": [],
+      "pred": [
+        ["It", "idI", 1]
+      ]
+    }
+
+    
+     }
+}
+

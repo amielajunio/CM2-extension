@@ -1,0 +1,16 @@
+
+{ 
+
+"collections" : {
+    "c_beta_1" : {"Us": {"Bn": null, "Re": null, "Co": {"C2": null}}},
+    "c_beta_2" : {"Bn": {"Us": {"Co": {"C2": null}, "Re": null}}},
+    "c_beta_3" : {"Ct": null},
+    "c_beta_4" : {"It": {"Bd": null}}
+
+
+    },
+"indexes" : {},
+"query_plans": {}
+}
+
+
