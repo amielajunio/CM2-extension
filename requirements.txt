@@ -1,0 +1,14 @@
+# Connessione e gestione MongoDB
+pymongo==4.6.1
+
+# Manipolazione e analisi dati (OnlineStore benchmark)
+pandas==2.2.0
+numpy==1.26.3
+
+# Visualizzazione e Notebook
+jupyterlab==4.1.0
+matplotlib==3.8.2
+seaborn==0.13.2
+
+# Utility (opzionale, per gestire variabili d'ambiente)
+python-dotenv==1.0.1

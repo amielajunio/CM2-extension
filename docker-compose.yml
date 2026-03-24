@@ -1,0 +1,23 @@
+
+services:
+  # Config Server
+  configsvr:
+    image: mongo:6.0
+    command: mongod --configsvr --replSet rs-config --port 27017
+    ports:
+      - "27019:27017"
+
+  # Shard 1
+  shard1:
+    image: mongo:6.0
+    command: mongod --shardsvr --replSet rs-shard1 --port 27017
+
+  # Router (Mongos)
+  mongos:
+    image: mongo:6.0
+    command: mongos --configdb rs-config/configsvr:27017 --bind_ip_all --port 27017
+    ports:
+      - "27017:27017"
+    depends_on:
+      - configsvr
+      - shard1
