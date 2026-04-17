@@ -2,22 +2,36 @@
 services:
   # Config Server
   configsvr:
-    image: mongo:6.0
-    command: mongod --configsvr --replSet rs-config --port 27017
+    image: mongo:latest
+    container_name: mongo-config
+    command: mongod --configsvr --replSet rs-config --port 27017 --bind_ip_all
     ports:
       - "27019:27017"
 
-  # Shard 1
   shard1:
-    image: mongo:6.0
-    command: mongod --shardsvr --replSet rs-shard1 --port 27017
+    image: mongo:latest
+    container_name: mongo-shard1
+    command: mongod --shardsvr --replSet rs-shard1 --port 27017 --bind_ip_all
+
+  shard2:
+    image: mongo:latest
+    container_name: mongo-shard2
+    command: mongod --shardsvr --replSet rs-shard2 --port 27017 --bind_ip_all
+
+  shard3:
+    image: mongo:latest
+    container_name: mongo-shard3
+    command: mongod --shardsvr --replSet rs-shard3 --port 27017 --bind_ip_all
 
   # Router (Mongos)
   mongos:
-    image: mongo:6.0
+    image: mongo:latest
+    container_name: mongo-mongos
     command: mongos --configdb rs-config/configsvr:27017 --bind_ip_all --port 27017
     ports:
-      - "27017:27017"
+      - "27025:27017"
     depends_on:
       - configsvr
       - shard1
+      - shard2
+      - shard3
